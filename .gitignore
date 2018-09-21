@@ -1,0 +1,11 @@
+#bin folder
+bin/
+
+# Generated files
+idea/
+
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
