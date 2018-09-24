@@ -15,7 +15,7 @@ public class Item implements Comparable<Item> {
         ArrayList<Item> items = new ArrayList<>();
         items.add(new Item(1, "Squats"));
         items.add(new Item(2, "Bench press"));
-        items.add(new Item(3, "Dead list"));
+        items.add(new Item(3, "Dead lift"));
         items.add(new Item(4, "Press"));
 
         System.out.println("before sorting");
@@ -65,8 +65,23 @@ public class Item implements Comparable<Item> {
                 '}';
     }
 
-    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (!(object instanceof Item)) return false;
+        if (!super.equals(object)) return false;
+
+        Item item = (Item) object;
+
+        if (getId() != item.getId()) return false;
+        if (!getName().equals(item.getName())) return false;
+
+        return true;
+    }
+
     public int hashCode() {
-        return name.hashCode();
+        int result = super.hashCode();
+        result = 31 * result + getId();
+        result = 31 * result + getName().hashCode();
+        return result;
     }
 }
