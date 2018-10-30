@@ -3,8 +3,10 @@ bin/
 
 # Generated files
 idea/
-
 out/
+.idea/
+target
+.idea/compiler.xml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
